@@ -76,13 +76,13 @@
 </template>
 
 <script>
+import "../assets/scss/scss"
 import articleHeader from './article-header.vue';
 import itemMenu from './item-menu.vue';
 import loginVue from './login.vue';
 import axios from 'axios';
 import Vue from 'vue';
-
-import {ref} from "vue"
+import {ref} from "vue" 
 export default{
     components:{
         itemMenu,

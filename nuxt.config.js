@@ -34,6 +34,13 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    // // Simple usage
+    'nuxt-scss-to-js',
+    {
+      generate: true,
+      namespace: 'variables'
+    }
+    // // With options
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
