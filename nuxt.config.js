@@ -1,3 +1,15 @@
+const { resolve } = require('path')
+module.exports = {
+  rootDir: resolve(__dirname, '..'),
+  buildDir: resolve(__dirname, '.nuxt'),
+  srcDir: __dirname,
+  modules: [
+    { handler: require('nuxt-scss-to-js') }
+  ],
+  nuxtScssToJs: {
+    generate: true
+  }
+}
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -35,11 +47,11 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // // Simple usage
-    'nuxt-scss-to-js',
-    {
-      generate: true,
-      namespace: 'variables'
-    }
+    // 'nuxt-scss-to-js',
+    // {
+    //   generate: true,
+    //   namespace: 'variables'
+    // }
     // // With options
   ],
 
@@ -48,6 +60,19 @@ export default {
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
+  
   build: {
+    babel:{
+      plugins: [
+        ["@babel/plugin-proposal-class-properties", { "loose": true }],
+        ["@babel/plugin-proposal-private-methods", { "loose": true }],
+        ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+      ],
+      presets(env, [ preset, options ]) {
+        return [
+          [ "@babel/preset-env", options ]
+        ]
+      }
+    }
   }
 }
