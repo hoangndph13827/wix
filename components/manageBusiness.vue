@@ -3,7 +3,7 @@
         <div class="container">
             <a-row>
                 <a-col :span="10">
-                    <a-carousel autoplay="true" class="bgr" effect="fade" arrows >
+                    <a-carousel :autoplay=true class="bgr" effect="fade" arrows >
                         <div slot="prevArrow" slot-scope="props" class="custom-slick-arrow"
                             style="left: 10px;zIndex: 1">
                             <a-icon type="left-circle" />

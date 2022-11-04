@@ -22,7 +22,8 @@
   </template>
   <script>
   import axios from "axios";
-  import { ref } from "vue";
+  import { ref} from "vue";
+  import Vue from "vue";
   export default {
     
     data() {
@@ -36,14 +37,17 @@
     props:{
       acc:{}
     },
-    setup(props){
+    setup(props ){
       const loggedIn = ref(true)
-      console.log(props.acc);
-      if(props.acc.username==""){
+      const acc = ref(props.acc)
+      
+      console.log(acc.value);
+      if(acc.value.username==""){
         loggedIn.value=false
       }
       return{
-        loggedIn
+        loggedIn,
+        acc
       }
     },
     methods: {

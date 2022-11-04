@@ -17,12 +17,14 @@
                         <li><b>Sign up for b free website builder</b>. Choose what kind of website you want to create.</li>
                         <li><b>Sign up for b free website builder</b>. Choose what kind of website you want to create.</li>
                     </ul>
-                    <a-button shape="round" style="background-color: black; color:aliceblue;">
+                    <div>
+                        <a-button shape="round" style="background-color: black; color:aliceblue;">
                         Get Started
                     </a-button>
                     <a-button shape="link">
                         Learn how to create a website ->
                     </a-button>
+                    </div>
                 </a-col>
             </a-row>
         </div>

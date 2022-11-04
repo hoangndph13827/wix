@@ -1,3 +1,3 @@
 export default  {
-  "a": "red"
+  "backgroundColor": "rgba(102,0,7,0.553)"
 } 

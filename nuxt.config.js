@@ -1,15 +1,5 @@
-const { resolve } = require('path')
-module.exports = {
-  rootDir: resolve(__dirname, '..'),
-  buildDir: resolve(__dirname, '.nuxt'),
-  srcDir: __dirname,
-  modules: [
-    { handler: require('nuxt-scss-to-js') }
-  ],
-  nuxtScssToJs: {
-    generate: true
-  }
-}
+
+ 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
@@ -47,32 +37,30 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // // Simple usage
-    // 'nuxt-scss-to-js',
-    // {
-    //   generate: true,
-    //   namespace: 'variables'
-    // }
-    // // With options
+    [
+      'nuxt-scss-to-js',
+      {
+        generate: true,
+        namespace: 'scss',
+        path:`~/assets/scss/theme1.scss`
+      }
+    ]
+    // With options
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    "nuxt-scss-to-js",
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   
   build: {
-    babel:{
-      plugins: [
-        ["@babel/plugin-proposal-class-properties", { "loose": true }],
-        ["@babel/plugin-proposal-private-methods", { "loose": true }],
-        ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
-      ],
-      presets(env, [ preset, options ]) {
-        return [
-          [ "@babel/preset-env", options ]
-        ]
-      }
-    }
+    extend (config, { isDev, isClient }) {
+      config.node = {
+           fs: 'empty'
+       }
+      // ....
+   }
   }
 }
