@@ -80,10 +80,9 @@
 import articleHeader from './article-header.vue';
 import itemMenu from './item-menu.vue';
 import loginVue from './login.vue';
-import axios from 'axios';
 import Vue from 'vue';
-import fs from "fs"
 // import "../assets/scss/scss"
+import fs from "fs"
 import {ref} from "vue" 
 export default{
     components:{
@@ -102,10 +101,10 @@ export default{
         const chooseTheme = ref((theme)=>{
             
             try {
-                const scssToJs = require ("nuxt-scss-to-js")
+                const scssToJs = require("nuxt-scss-to-js")
             } catch (error) {
                 console.log(error);
-                console.log(fs);
+                // console.log(fs);
             }
             // scssToJs.path=`~/assets/scss/${theme}.scss`
         })

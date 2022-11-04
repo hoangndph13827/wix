@@ -13,8 +13,8 @@ import articleVue from "../components/article.vue";
 import footerVue from "../components/footer.vue";
 import cookie from "vue-cookies-reactive"
 import Vue from "vue";
+
 Vue.use(cookie)
-// import 
 export default {
   components:{
     header1,
@@ -37,7 +37,7 @@ export default {
         width: 1100px;
         margin: 0 auto 0 auto;
         padding: 50px 30px 50px 30px;
-        background-color: rgb(200, 200, 225);
+        background-color: rgba(200, 200, 225, 0.249);
 }
 .title{
         font-size: 55px;
